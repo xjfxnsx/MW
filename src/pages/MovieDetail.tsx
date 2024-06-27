@@ -8,7 +8,7 @@ const MovieDetail: React.FC = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=YOUR_API_KEY`)
+      axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=93e3a8b5fbc8fa6a63ff5354739f27d9`)
         .then(response => {
           setMovie(response.data);
         })

@@ -14,7 +14,7 @@ const MovieList: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
-    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=YOUR_API_KEY')
+    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=93e3a8b5fbc8fa6a63ff5354739f27d9')
       .then(response => {
         setMovies(response.data.results);
       })
