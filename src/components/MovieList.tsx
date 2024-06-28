@@ -12,16 +12,23 @@ interface Movie {
 
 const MovieList: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     axios.get('https://api.themoviedb.org/3/movie/popular?api_key=93e3a8b5fbc8fa6a63ff5354739f27d9')
       .then(response => {
         setMovies(response.data.results);
+        setLoading(false);
       })
       .catch(error => {
-        console.error("Error fetching data:", error);
+        setError('Error fetching data');
+        setLoading(false);
       });
   }, []);
+
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error) return <div className="error">{error}</div>;
 
   return (
     <div className="movie-list">
