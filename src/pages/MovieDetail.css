@@ -1,0 +1,48 @@
+.MovieDetailContainer {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .MovieDetailContainer img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .InfoItem {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .SectionTitle {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .ListItem {
+    margin-bottom: 8px;
+  }
+  
+  .VideoTitle {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .ReviewAuthor {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .ReviewContent {
+    font-size: 16px;
+    line-height: 1.6;
+  }

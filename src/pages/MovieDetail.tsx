@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import './MovieDetail.css';
 
 interface Movie {
   title: string;
@@ -21,7 +22,7 @@ const MovieDetail: React.FC = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=93e3a8b5fbc8fa6a63ff5354739f27d9&language=ru-RU`);
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=93e3a8b5fbc8fa6a63ff5354739f27d9&language=en-EN`);
         setMovie(response.data);
       } catch (error) {
         console.error("Error loading movie data:", error);
@@ -75,18 +76,18 @@ const MovieDetail: React.FC = () => {
   if (!movie) return <div>Movie data not found.</div>;
 
   return (
-    <div>
+    <div className="MovieDetailContainer">
       <h1>{movie.title}</h1>
       <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-      <p>Release Date: {movie.release_date}</p>
+      <p className="InfoItem">Release Date: {movie.release_date}</p>
       <p>{movie.overview}</p>
 
       {/* Review cast */}
-      <h2>Cast</h2>
+      <h2 className="SectionTitle">Cast</h2>
       {cast.length > 0 ? (
         <ul>
           {cast.map((actor: any) => (
-            <li key={actor.id}>{actor.name} as {actor.character}</li>
+            <li className="ListItem" key={actor.id}>{actor.name} as {actor.character}</li>
           ))}
         </ul>
       ) : (
@@ -94,7 +95,7 @@ const MovieDetail: React.FC = () => {
       )}
 
       {/* Review trailers */}
-      <h2>Trailers</h2>
+      <h2 className="SectionTitle">Trailers</h2>
       {videos.length > 0 ? (
         <div>
           {videos.map((video: any) => (
@@ -115,13 +116,13 @@ const MovieDetail: React.FC = () => {
       )}
 
       {/* Review users' review */}
-      <h2>Users' review</h2>
+      <h2 className="SectionTitle">Users' review</h2>
       {reviews.length > 0 ? (
         <div>
           {reviews.map((review: any) => (
-            <div key={review.id}>
-              <h3>{review.author}</h3>
-              <p>{review.content}</p>
+            <div key={review.id} className="Review">
+              <h3 className="ReviewAuthor">{review.author}</h3>
+              <p className="ReviewContent">{review.content}</p>
             </div>
           ))}
         </div>
