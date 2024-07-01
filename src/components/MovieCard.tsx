@@ -1,26 +1,31 @@
 import React from 'react';
 import { format } from 'date-fns';
-import './MovieCard.css';  // Добавляем импорт стилей
+import './MovieCard.css';
+import { Link } from 'react-router-dom';
 
 interface MovieCardProps {
+  key: number;
   title: string;
   poster: string;
   releaseDate: string;
   overview: string;
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ title, poster, releaseDate, overview }) => {
+const MovieCard: React.FC<MovieCardProps> = ({ key, title, poster, releaseDate, overview }) => {
   const formattedDate = format(new Date(releaseDate), 'd MMMM yyyy');
 
   return (
     <div className="movie-card">
-      <img src={poster} alt={title} />
-      <div className="movie-info">
+      <Link to={`/movie/${key}`} className="link-no-underline">
+        <img src={poster} alt={title} />
         <h2>{title}</h2>
+      </Link>
+      <div className="movie-info">
         <p>{formattedDate}</p>
         <p>{overview}</p>
       </div>
-    </div>
+
+    </div >
   );
 };
 

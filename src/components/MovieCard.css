@@ -1,30 +1,35 @@
 .movie-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 200px;
-  }
-  
-  .movie-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  .movie-info {
-    text-align: center;
-  }
-  
-  .movie-info h2 {
-    font-size: 18px;
-    margin: 10px 0;
-  }
-  
-  .movie-info p {
-    font-size: 14px;
-    color: #666;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.movie-info {
+  text-align: center;
+}
+
+.movie-info h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.movie-info p {
+  font-size: 14px;
+  color: #666;
+}
+
+.link-no-underline {
+  text-decoration: none;
+  color: inherit;
+}
