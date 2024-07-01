@@ -21,7 +21,7 @@ const MovieDetail: React.FC = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=YOUR_API_KEY&language=ru-RU`);
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=93e3a8b5fbc8fa6a63ff5354739f27d9&language=ru-RU`);
         setMovie(response.data);
       } catch (error) {
         console.error("Error loading movie data:", error);
@@ -33,7 +33,7 @@ const MovieDetail: React.FC = () => {
 
     const fetchCredits = async () => {
       try {
-        const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=YOUR_API_KEY`);
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=93e3a8b5fbc8fa6a63ff5354739f27d9`);
         setCast(response.data.cast);
       } catch (error) {
         console.error("Error loading cast:", error);
@@ -43,7 +43,7 @@ const MovieDetail: React.FC = () => {
 
     const fetchVideos = async () => {
       try {
-        const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=YOUR_API_KEY`);
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=93e3a8b5fbc8fa6a63ff5354739f27d9`);
         setVideos(response.data.results);
       } catch (error) {
         console.error("Error loading trailers:", error);
@@ -53,7 +53,7 @@ const MovieDetail: React.FC = () => {
 
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=YOUR_API_KEY`);
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=93e3a8b5fbc8fa6a63ff5354739f27d9`);
         setReviews(response.data.results);
       } catch (error) {
         console.error("Error loading reviews:", error);
