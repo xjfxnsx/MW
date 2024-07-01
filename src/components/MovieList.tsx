@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { fetchMovies } from '../services/api';
-import MovieCard from './MovieCard';
+import MovieCard, { MovieCardProps } from './MovieCard';
 import SearchBar from './SearchBar';
 import GenreFilter from './GenreFilter';
 import SortFilter from './SortFilter';
+import { format } from 'date-fns';
+import { Link } from 'react-router-dom';
 
 interface Movie {
   id: number;
@@ -75,7 +77,7 @@ const MovieList: React.FC = () => {
       <div className="movie-list">
         {movies.map(movie => (
           <MovieCard
-            key={movie.id}
+            id={movie.id}
             title={movie.title}
             poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             releaseDate={movie.release_date}

@@ -3,20 +3,20 @@ import { format } from 'date-fns';
 import './MovieCard.css';
 import { Link } from 'react-router-dom';
 
-interface MovieCardProps {
-  key: number;
+export interface MovieCardProps {
+  id: number;
   title: string;
   poster: string;
   releaseDate: string;
   overview: string;
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ key, title, poster, releaseDate, overview }) => {
+const MovieCard: React.FC<MovieCardProps> = ({ id, title, poster, releaseDate, overview }) => {
   const formattedDate = format(new Date(releaseDate), 'd MMMM yyyy');
 
   return (
     <div className="movie-card">
-      <Link to={`/movie/${key}`} className="link-no-underline">
+      <Link to={`/movie/${id}`} className="link-no-underline">
         <img src={poster} alt={title} />
         <h2>{title}</h2>
       </Link>
@@ -24,8 +24,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ key, title, poster, releaseDate, 
         <p>{formattedDate}</p>
         <p>{overview}</p>
       </div>
-
-    </div >
+    </div>
   );
 };
 
