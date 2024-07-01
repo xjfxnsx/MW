@@ -1,4 +1,5 @@
 import React from 'react';
+import { format } from 'date-fns';
 
 interface MovieCardProps {
   title: string;
@@ -8,12 +9,16 @@ interface MovieCardProps {
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({ title, poster, releaseDate, overview }) => {
+  const formattedDate = format(new Date(releaseDate), 'd MMMM yyyy');
+
   return (
     <div className="movie-card">
       <img src={poster} alt={title} />
-      <h2>{title}</h2>
-      <p>{releaseDate}</p>
-      <p>{overview}</p>
+      <div className="movie-info">
+        <h2>{title}</h2>
+        <p>{formattedDate}</p>
+        <p>{overview}</p>
+      </div>
     </div>
   );
 };
