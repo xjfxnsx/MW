@@ -8,10 +8,10 @@ export const fetchGenres = async () => {
   return response.data.genres;
 };
 
-export const fetchMovies = async (page: number, query: string = '', genreId: number | null = null) => {
+export const fetchMovies = async (page: number, query: string = '', genreId: number | null = null, sortOption: string = '') => {
   const url = query
     ? `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}&page=${page}`
-    : `${BASE_URL}/discover/movie?api_key=${API_KEY}&page=${page}${genreId ? `&with_genres=${genreId}` : ''}`;
+    : `${BASE_URL}/discover/movie?api_key=${API_KEY}&page=${page}${genreId ? `&with_genres=${genreId}` : ''}${sortOption ? `&sort_by=${sortOption}` : ''}`;
   const response = await axios.get(url);
   return response.data.results;
 };
