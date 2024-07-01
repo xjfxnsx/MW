@@ -4,8 +4,6 @@ import MovieCard, { MovieCardProps } from './MovieCard';
 import SearchBar from './SearchBar';
 import GenreFilter from './GenreFilter';
 import SortFilter from './SortFilter';
-import { format } from 'date-fns';
-import { Link } from 'react-router-dom';
 
 interface Movie {
   id: number;
