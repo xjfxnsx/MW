@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchGenres } from '../services/api';
+import './GenreFilter.css';
 
 interface Genre {
   id: number;
