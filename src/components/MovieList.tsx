@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { fetchMovies } from '../services/api';
 import MovieCard from './MovieCard';
 import SearchBar from './SearchBar';
+import GenreFilter from './GenreFilter';
 
 interface Movie {
   id: number;
@@ -17,18 +18,16 @@ const MovieList: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [page, setPage] = useState<number>(1);
   const [query, setQuery] = useState<string>('');
+  const [genreId, setGenreId] = useState<number | null>(null);
 
-  const fetchMovies = (page: number, query: string = '') => {
+  const fetchMoviesData = (page: number, query: string = '', genreId: number | null = null) => {
     setLoading(true);
-    const url = query
-      ? `https://api.themoviedb.org/3/search/movie?api_key=93e3a8b5fbc8fa6a63ff5354739f27d9&query=${query}&page=${page}`
-      : `https://api.themoviedb.org/3/movie/popular?api_key=93e3a8b5fbc8fa6a63ff5354739f27d9&page=${page}`;
-    axios.get(url)
+    fetchMovies(page, query, genreId)
       .then(response => {
         if (page === 1) {
-          setMovies(response.data.results);
+          setMovies(response);
         } else {
-          setMovies(prevMovies => [...prevMovies, ...response.data.results]);
+          setMovies(prevMovies => [...prevMovies, ...response]);
         }
         setLoading(false);
       })
@@ -39,13 +38,19 @@ const MovieList: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchMovies(page, query);
-  }, [page, query]);
+    fetchMoviesData(page, query, genreId);
+  }, [page, query, genreId]);
 
   const handleSearch = (query: string) => {
     setQuery(query);
     setPage(1);
-    fetchMovies(1, query);
+    fetchMoviesData(1, query, genreId);
+  };
+
+  const handleGenreSelect = (genreId: number | null) => {
+    setGenreId(genreId);
+    setPage(1);
+    fetchMoviesData(1, query, genreId);
   };
 
   const loadMoreMovies = () => {
@@ -57,6 +62,7 @@ const MovieList: React.FC = () => {
   return (
     <div>
       <SearchBar onSearch={handleSearch} />
+      <GenreFilter onGenreSelect={handleGenreSelect} />
       <div className="movie-list">
         {movies.map(movie => (
           <MovieCard
