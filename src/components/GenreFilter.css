@@ -1,3 +1,5 @@
 .genre-filter {
-    margin: 10px 0;
-  }
+  border: 1px solid none;
+  border-radius: 5px;
+  margin: 10px 100px;
+}

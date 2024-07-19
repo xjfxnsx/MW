@@ -116,7 +116,7 @@ const MovieDetail: React.FC = () => {
       )}
 
       {/* Review users' review */}
-      <h2 className="SectionTitle">Users' review</h2>
+      <h2 className="SectionTitle">TMDB users' review</h2>
       {reviews.length > 0 ? (
         <div>
           {reviews.map((review: any) => (
@@ -127,7 +127,7 @@ const MovieDetail: React.FC = () => {
           ))}
         </div>
       ) : (
-        <div>Users' review not found.</div>
+        <div>TMDB users' review not found.</div>
       )}
     </div>
   );

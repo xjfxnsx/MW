@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color:maroon;
   margin: 0;
   padding: 0;
 }
@@ -14,8 +14,8 @@ body {
 }
 
 .movie-card {
-  background-color: white;
-  border: 1px solid #ddd;
+  background-color:firebrick;
+  border: 1px solid darkred;
   border-radius: 8px;
   padding: 16px;
   width: 200px;
@@ -37,24 +37,24 @@ body {
 .movie-card h2 {
   font-size: 18px;
   margin: 8px 0;
-  color: #333;
+  color: white;
 }
 
 .movie-card p {
   font-size: 14px;
-  color: #777;
+  color: black;
 }
 
 .loading {
   text-align: center;
   padding: 20px;
   font-size: 24px;
-  color: #333;
+  color: whitesmoke;
 }
 
 .error {
   text-align: center;
   padding: 20px;
   font-size: 24px;
-  color: red;
+  color: black;
 }
