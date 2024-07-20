@@ -19,11 +19,12 @@ const MovieCard: React.FC<MovieCardProps> = ({ id, title, poster, releaseDate, o
       <Link to={`/movie/${id}`} className="link-no-underline">
         <img src={poster} alt={title} />
         <h2>{title}</h2>
-      </Link>
+      {/* </Link> */}
       <div className="movie-info">
         <p>{formattedDate}</p>
         <p>{overview}</p>
       </div>
+      </Link>
     </div>
   );
 };
