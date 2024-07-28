@@ -61,3 +61,10 @@
     color: white;
     font-style: italic;
   }
+
+* {
+  cursor: default;
+}
+  .SectionTitle {
+    cursor: pointer;
+  }
