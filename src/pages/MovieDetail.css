@@ -68,3 +68,11 @@
   .SectionTitle {
     cursor: pointer;
   }
+
+  .link-home {
+    display: flex;
+    color: white;
+    justify-content: end;
+    cursor: pointer;
+    text-decoration: none;
+  }

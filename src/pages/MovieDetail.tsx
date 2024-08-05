@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import './MovieDetail.css';
 import Toggle from '../components/Toggle';
@@ -78,6 +78,7 @@ const MovieDetail: React.FC = () => {
 
   return (
     <div className="MovieDetailContainer">
+      <Link to={`/`} className="link-home">Home &#127968;</Link>
       <h1>{movie.title}</h1>
       <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
       <p className="InfoItem">Release Date: {movie.release_date}</p>
