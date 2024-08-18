@@ -17,7 +17,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="search-bar" /* style={{ textAlign: 'center', margin: '20px' } }*/>
+    <div className="search-bar">
       <input
         type="text"
         value={query}
