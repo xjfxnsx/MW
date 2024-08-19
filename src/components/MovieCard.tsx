@@ -11,8 +11,19 @@ export interface MovieCardProps {
   overview: string;
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ id, title, poster, releaseDate, overview }) => {
-  const formattedDate = format(new Date(releaseDate), 'd MMMM yyyy');
+const MovieCard: React.FC<MovieCardProps> = ({
+  id,
+  title,
+  poster,
+  releaseDate,
+  overview,
+}) => {
+  console.log(releaseDate);
+
+  const formattedDate =
+  releaseDate === ""
+  ? "No Date"
+  : format(new Date(releaseDate), 'd MMMM yyyy');
 
   return (
     <div className="movie-card">
