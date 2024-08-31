@@ -1,5 +1,5 @@
 import React from 'react';
-import { format } from 'date-fns';
+import { format, isValid } from 'date-fns';
 import './MovieCard.css';
 import { Link } from 'react-router-dom';
 
@@ -18,12 +18,11 @@ const MovieCard: React.FC<MovieCardProps> = ({
   releaseDate,
   overview,
 }) => {
-  console.log(releaseDate);
 
-  const formattedDate =
-  releaseDate === ""
-  ? "No Date"
-  : format(new Date(releaseDate), 'd MMMM yyyy');
+  const date = new Date(releaseDate);
+  const formattedDate = isValid(date)
+    ? format(date, 'd MMMM yyyy')
+    : 'No Date';
 
   return (
     <div className="movie-card">
