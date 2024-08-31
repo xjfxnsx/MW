@@ -17,11 +17,16 @@
 
 .movie-info {
   text-align: center;
-}
+/*}
 
-.movie-info h2 {
+.movie-info h2 {*/
   font-size: 18px;
   margin: 10px 0;
+}
+
+.movie-card h2,
+.movie-card img {
+  cursor: pointer;
 }
 
 .link-no-underline {
