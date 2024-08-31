@@ -16,12 +16,19 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     onSearch(query);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="search-bar">
       <input
         type="text"
         value={query}
         onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
         placeholder="Search for a movie..."
       />
       <button onClick={handleSearch}>Search</button>
