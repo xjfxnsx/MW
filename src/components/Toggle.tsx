@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-interface ToggleProps {
+type ToggleProps = {
     title: string;
     children: React.ReactNode;
   }

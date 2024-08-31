@@ -1,7 +1,7 @@
 import React from 'react';
 import './SortFilter.css';
 
-interface SortFilterProps {
+type SortFilterProps = {
   onSortSelect: (sortOption: string) => void;
 }
 

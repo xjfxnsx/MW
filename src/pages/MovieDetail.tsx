@@ -6,7 +6,7 @@ import Cast from '../movie details/Cast';
 import Trailers from '../movie details/Trailers';
 import Reviews from '../movie details/Reviews';
 
-interface Movie {
+type Movie = {
   title: string;
   poster_path: string;
   release_date: string;

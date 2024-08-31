@@ -1,7 +1,7 @@
 import React from 'react';
 import Toggle from '../components/Toggle';
 
-interface TrailersProps {
+type TrailersProps = {
   videos: Array<{ id: string; key: string; name: string }>;
 }
 

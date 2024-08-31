@@ -1,7 +1,7 @@
 import React from 'react';
 import Toggle from '../components/Toggle';
 
-interface CastProps {
+type CastProps = {
   cast: Array<{ id: number; name: string; character: string }>;
 }
 

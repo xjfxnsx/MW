@@ -1,7 +1,7 @@
 import React from 'react';
 import Toggle from '../components/Toggle';
 
-interface ReviewsProps {
+type ReviewsProps = {
   reviews: Array<{ id: string; author: string; content: string }>;
 }
 

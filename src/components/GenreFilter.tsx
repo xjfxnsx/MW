@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { fetchGenres } from '../services/api';
 import './GenreFilter.css';
 
-interface Genre {
+type Genre = {
   id: number;
   name: string;
 }
 
-interface GenreFilterProps {
+type GenreFilterProps = {
   onGenreSelect: (genreId: number | null) => void;
 }
 

@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { fetchMovies } from '../services/api';
 
-interface Movie {
+type Movie = {
   id: number;
   title: string;
   poster_path: string;
@@ -9,7 +9,7 @@ interface Movie {
   overview: string;
 }
 
-interface MovieContextType {
+type MovieContextType = {
   movies: Movie[];
   loading: boolean;
   error: string | null;
