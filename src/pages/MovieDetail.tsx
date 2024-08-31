@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import './MovieDetail.css';
-import Toggle from '../components/Toggle';
+import Cast from '../movie details/Cast';
+import Trailers from '../movie details/Trailers';
+import Reviews from '../movie details/Reviews';
 
 interface Movie {
   title: string;
@@ -84,53 +86,9 @@ const MovieDetail: React.FC = () => {
       <p className="InfoItem">Release Date: {movie.release_date}</p>
       <p>{movie.overview}</p>
 
-      <Toggle title="Cast">
-        {cast.length > 0 ? (
-          <ul>
-            {cast.map((actor: any) => (
-              <li className="ListItem" key={actor.id}>{actor.name} as {actor.character}</li>
-            ))}
-          </ul>
-        ) : (
-          <div>Cast data not found.</div>
-        )}
-      </Toggle>
-
-      <Toggle title="Trailers">
-        {videos.length > 0 ? (
-          <div>
-            {videos.map((video: any) => (
-              <div key={video.id}>
-                <p>{video.name}</p>
-                <iframe
-                  width="560"
-                  height="315"
-                  src={`https://www.youtube.com/embed/${video.key}`}
-                  title={video.name}
-                  allowFullScreen
-                />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div>Trailers not found.</div>
-        )}
-      </Toggle>
-
-      <Toggle title="TMDB users' review">
-        {reviews.length > 0 ? (
-          <div>
-            {reviews.map((review: any) => (
-              <div key={review.id} className="Review">
-                <h3 className="ReviewAuthor">{review.author}</h3>
-                <p className="ReviewContent">{review.content}</p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div>TMDB users' review not found.</div>
-        )}
-      </Toggle>
+      <Cast cast={cast} />
+      <Trailers videos={videos} />
+      <Reviews reviews={reviews} />
     </div>
   );
 };
