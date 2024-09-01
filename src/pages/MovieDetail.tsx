@@ -89,6 +89,8 @@ const MovieDetail: React.FC = () => {
       <Cast cast={cast} />
       <Trailers videos={videos} />
       <Reviews reviews={reviews} />
+      <br></br>
+      <p>Developed by <a href="https://github.com/xjfxnsx" target="_blank">xjfxnsx</a></p>
     </div>
   );
 };

@@ -43,6 +43,8 @@ const MovieList: React.FC = () => {
       <div style={{ textAlign: 'center', margin: '20px' }}>
         <button onClick={loadMoreMovies}>Load More</button>
       </div>
+      <br></br>
+      <p>Developed by <a href="https://github.com/xjfxnsx" target="_blank">xjfxnsx</a></p>
     </div>
   );
 };
