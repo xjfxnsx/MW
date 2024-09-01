@@ -1,5 +1,27 @@
 .genre-filter {
-  border: 1px solid none;
-  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin: 10px 100px;
+}
+
+.genre-filter label {
+  display: block;
+  font-weight: bold;
+  color: #333;
+}
+
+.genre-filter select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.genre-filter select:focus {
+  border-color: #007bff;
+  outline: none;
 }
