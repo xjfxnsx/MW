@@ -1,6 +1,6 @@
 body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
-  background-color:maroon;
+  background-color: maroon;
   margin: 0;
   padding: 0;
 }
@@ -14,11 +14,12 @@ body {
 }
 
 .movie-card {
-  background-color:firebrick;
+  background-color: firebrick;
   border: 1px solid darkred;
   border-radius: 8px;
   padding: 16px;
   width: 200px;
+  max-width: 100%;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
@@ -42,10 +43,10 @@ body {
 
 .movie-card p {
   font-size: 14px;
-  color:wheat;
+  color: wheat;
 }
 
-.loading {
+.loading, .error {
   text-align: center;
   padding: 20px;
   font-size: 24px;
@@ -53,9 +54,6 @@ body {
 }
 
 .error {
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
   color: black;
 }
 
@@ -65,10 +63,22 @@ p {
 
 a {
   text-decoration: none;
-  color:wheat;
+  color: wheat;
 }
 
 a:hover {
   cursor: pointer;
   color: black;
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+    width: 100%; 
+    margin-bottom: 16px;
+  }
+
+  .movie-list {
+    padding: 8px;
+    gap: 8px;
+  }
 }
